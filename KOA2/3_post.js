@@ -9,7 +9,7 @@ app.use(async ctx => {
     // 监听data事件，收到表单的数据的时候就会执行
     ctx.req.on('data', chunk => {
         // console.log(chunk);
-        data += chunk; //  二进制 toString
+        data += chunk; //  chunk二进制数据 toString
     });
 
     // 接收表单提交数据完成后
