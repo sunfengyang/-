@@ -3,10 +3,10 @@ const app = new Koa();
 
 const Router = require('koa-router');
 const router = new Router({
-    prefix: '/weichuang'
+    prefix: '/sfy'
 });
 router.get('/abc', (ctx, next) => {
-    ctx.body = 'weichuang';
+    ctx.body = 'sfy';
 });
 
 router.get('/test', (ctx, next) => {
