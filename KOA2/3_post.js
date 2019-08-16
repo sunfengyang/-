@@ -9,13 +9,13 @@ app.use(async ctx => {
     // 监听data事件，收到表单的数据的时候就会执行
     ctx.req.on('data', chunk => {
         // console.log(chunk);
-        data += chunk; //  chunk二进制数据 toString
+        data += chunk; //  chunk是二进制数据 toString
     });
 
     // 接收表单提交数据完成后
     ctx.req.on('end', ()=>{
         data = decodeURI(data);
-        console.log(data); //username=weichuang&password=12345
+        console.log(data); //username=sfy&password=12345
     });
 
     ctx.body = '123';
