@@ -12,7 +12,7 @@ app.use(async ctx => {
         data += chunk; //  chunk是二进制数据 toString
     });
 
-    // 接收表单提交数据完成后
+    // 接收表单提交数据完成后。
     ctx.req.on('end', ()=>{
         data = decodeURI(data);
         console.log(data); //username=sfy&password=12345
