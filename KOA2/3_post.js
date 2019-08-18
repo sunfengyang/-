@@ -8,7 +8,7 @@ app.use(async ctx => {
 
     // 监听data事件，收到表单的数据的时候就会执行
     ctx.req.on('data', chunk => {
-        // console.log(chunk);
+        
         data += chunk; //  chunk是二进制数据 toString
     });
 
