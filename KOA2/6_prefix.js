@@ -3,14 +3,14 @@ const app = new Koa();
 
 const Router = require('koa-router');
 const router = new Router({
-    prefix: '/sfy'
+    prefix: '/sfy'   //  url变得更长,多级导航
 });
 router.get('/abc', (ctx, next) => {
-    ctx.body = 'sfy';
+    ctx.body = 'age21';
 });
 
 router.get('/test', (ctx, next) => {
-    ctx.body = 'TEST';
+    ctx.body = 'sunfy';
 });
 
 app.use(router.routes());
