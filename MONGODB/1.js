@@ -4,6 +4,6 @@ var data = {
     "userName" : userName,
     "registTime" : time,
 };
-var db = connect('sunfengyang');
+var db = connect('sunfengyang'); //连接数据库
 db.user.insert(data);
 print('insert success');

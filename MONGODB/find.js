@@ -57,7 +57,7 @@ db.user.find(
 db.user.find(
     {},
     {name: true, age: true, _id: false}
-).limit(10).skip(20).sort({age: -1}) //  查几条，跳过多少个，按年龄逆序
+).limit(10).skip(20).sort({age: -1}) //  查几条，跳过多少个从0开始，按年龄逆序
 
 
 
