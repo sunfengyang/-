@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="container"></ul>
+
+    <script>
+        let now = Date.now();
+        const total = 100000; // 插入的数据总数
+        let oContainer = document.getElementById('container');
+        // DOM:document object model 文档对象模型
+        // jquery  vue react ...
+        for (let i = 0; i < total; i++) {
+            // 创建li元素
+            let oLi = document.createElement('li');
+            oLi.innerHTML = i; // innerHTML   innerText  ??
+            oContainer.appendChild(oLi);
+        }
+        console.log('js运行时间：' ,  Date.now() - now);
+        // 渲染页面
+        
+        setTimeout(()=>{
+            console.log('总的运行时间：' ,  Date.now() - now);
+        }, 0);
+    </script>
+</body>
+
+</html>

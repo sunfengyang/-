@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="container">
+
+
+    </ul>
+
+
+    <script>
+        const total = 100000;
+        let oContainer = document.getElementById('container');
+        const once = 2000; // 一次插入的条数
+        const page = total / once // 总的页数
+        const index = 0; // 数据的索引
+
+        function insert (curTotal, curIndex){
+            if(curTotal <= 0){
+                return;
+            }
+            window.requestAnimationFrame(()=>{
+                for(let i=0; i<once; i++){
+                    let oLi = document.createElement('li');
+                    oLi.innerHTML = curIndex + i;
+                    oContainer.appendChild(oLi);
+                }
+                insert(curTotal - once, curIndex + once);
+            });
+
+        }
+
+        insert(total, index);
+
+        // FPS    大多数显示器60Hz  16.7ms
+
+        // 重绘redraw/repaint     背景颜色 
+
+        // 重排/回流  reflow  DOM操作 
+
+        // 重排一定会引发重绘  但是重绘不一定会引发重排
+    
+    
+    </script>
+</body>
+</html>

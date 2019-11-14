@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="container"></ul>
+
+
+    <script>
+        const total = 100000;
+        let oContainer = document.getElementById('container');
+        const once = 2000; // 一次插入的条数
+        const page = total / once // 总的页数
+        const index = 0; // 数据的索引
+
+        function insert (curTotal, curIndex){
+            if(curTotal <= 0){
+                return;
+            }
+            setTimeout(()=>{
+                for(let i=0; i<once; i++){
+                    let oLi = document.createElement('li');
+                    oLi.innerHTML = curIndex + i;
+                    oContainer.appendChild(oLi);
+                }
+                insert(curTotal - once, curIndex + once);
+            }, 0);
+
+        }
+
+        insert(total, index);
+
+        // FPS    大多数显示器60Hz  16.7ms
+    
+    
+    </script>
+</body>
+</html>
